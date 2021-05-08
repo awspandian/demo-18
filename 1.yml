@@ -1,0 +1,9 @@
+---
+- hosts: centos
+  user: ansible
+  become: yes
+  tasks: 
+  -  name: configure a MOTD(message of the day)
+     copy:
+       src: centos_motd
+       dest: /etc/motd

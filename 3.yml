@@ -1,0 +1,11 @@
+---
+- hosts: centos
+  user: ansible
+  become: yes
+  vars:
+    motd: "Testing the method using vars \n"
+  tasks: 
+  -  name: configure a MOTD(message of the day)
+     copy:
+       content: "{{ motd }}"
+       dest: /etc/motd
