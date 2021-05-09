@@ -1,0 +1,11 @@
+---
+- hosts: centos
+  user: ansible
+  become: yes
+  vars_prompt:
+    - name: username
+      private: false
+  tasks: 
+  -  name: Test vars_prompt
+     debug:
+       msg: "{{ username }}"
