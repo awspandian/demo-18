@@ -1,0 +1,17 @@
+---
+-
+  hosts: centos
+  tasks:
+    - name: Ansible Jinja2 for range, reversed (simulate while greater 5)
+      debug:
+        msg: >
+             --== Ansible Jinja2 for range, reversed (simulate while greater 5) ==--
+
+             {% for entry in range(10, 0, -1) -%}
+                {% if entry == 5 -%}
+                   {% break %}
+                {% endif -%}
+                {{ entry }}
+             {% endfor %}
+
+...

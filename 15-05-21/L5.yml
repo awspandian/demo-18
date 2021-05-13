@@ -1,0 +1,15 @@
+---
+-
+  hosts: centos
+  user: ansible
+  become: true
+  tasks:
+    - name: Creating user
+      user:
+        name: "{{ item }}"
+        state: absent
+      with_items: 
+        - user3
+        - user4
+        
+        

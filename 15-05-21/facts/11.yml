@@ -1,0 +1,16 @@
+---
+-
+  hosts: centos
+  tasks:
+    - name: Ansible Jinja2 for range
+      debug:
+        msg: >
+             --== Ansible Jinja2 for range
+
+             {% for entry in range(1, 11) -%}
+                {{ entry }}
+             {% endfor %}
+
+# Three dots indicate the end of a YAML document
+...
+

@@ -1,0 +1,17 @@
+---
+-
+  hosts: centos
+  user: ansible
+  become: true
+  tasks:
+    - name: Creating user
+      user:
+        name: "{{ item.key }}"
+        comment: "{{ item.value.full_name }}"
+        state: absent
+      with_dict: 
+        user1: 
+          full_name: Hippo
+        user2: 
+          full_name: Azcs
+        

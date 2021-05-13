@@ -1,0 +1,12 @@
+---
+-
+  hosts: centos
+  user: ansible
+  become: true
+  tasks:
+    - name: Pause our playbook for 10 seconds
+      pause:
+        prompt: Please check that the webserver is running, press enter to continue
+
+...
+

@@ -1,0 +1,13 @@
+---
+-
+  hosts: centos 
+  tasks:
+    - name: Ansible Jinja2 if
+      debug:
+        msg: >
+             --== Ansible Jinja2 if statement ==--
+ 
+             {# If the hostname is sr2, include a message -#}
+             {% if ansible_hostname == "sr2" -%}
+                   This is SR2
+             {% endif %}

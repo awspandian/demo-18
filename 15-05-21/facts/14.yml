@@ -1,0 +1,18 @@
+---
+-
+  hosts: centos
+  tasks:
+    - name: Ansible Jinja2 if elif else
+      debug:
+        msg: >
+             --== Ansible Jinja2 if elif else statement ==--
+
+             {% if ansible_hostname == "demo" -%}
+                This is centos sr2
+             {% elif ansible_hostname == "dev11" -%}
+                This is centos1 with it's modified SSH Port
+             {% else -%}
+                This is good old {{ ansible_hostname }}
+             {% endif %}
+
+...

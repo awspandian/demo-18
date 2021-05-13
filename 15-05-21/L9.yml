@@ -1,0 +1,19 @@
+---
+-
+  hosts: centos
+  user: ansible
+  become: true
+  tasks:
+    - name: Creating user
+      user:
+        name: "{{ item.key }}"
+        comment: "{{ item.value.full_name }}"
+      with_dict: 
+        james: 
+          full_name: James Spurin
+
+    - name: Create hex sequence directories
+      file:
+        dest: "{{ item }}"
+        state: directory
+      with_sequence: start=0 end=16 stride=1 format=/home/james/hex_sequence_%x
